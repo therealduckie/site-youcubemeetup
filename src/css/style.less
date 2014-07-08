@@ -1,0 +1,131 @@
+@import "../../bower_components/bootstrap/less/variables.less";
+@import "../../bower_components/bootstrap/less/mixins.less";
+@import "../../bower_components/bootstrap/less/normalize.less";
+@import "../../bower_components/bootstrap/less/print.less";
+@import "../../bower_components/bootstrap/less/scaffolding.less";
+@import "../../bower_components/bootstrap/less/grid.less";
+
+@import "fonts.less";
+
+@font-family-sans-serif: "Museo Sans", sans-serif;
+@logo-width: 125px;
+@logo-bar-height: 72px;
+@footer-height: 65px;
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: url('../img/background.jpg') center center no-repeat;
+    background-size: cover;
+    font-weight: 300;
+}
+
+.page {
+    min-height: 100%;
+    margin-bottom: -@footer-height;
+
+    &:after {
+        content: "";
+        display: block;
+        height: @footer-height;
+    }
+}
+
+h1, h2 {
+    margin: 0;
+    font-weight: 200;
+}
+
+header {
+    background: url('../img/logo.png') center center no-repeat;
+    position: relative;
+    line-height: @logo-bar-height * 2;
+    margin-bottom: @grid-gutter-width * 4;
+    .clearfix();
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        margin-top: @logo-bar-height / -2;
+        height: @logo-bar-height;
+        background: #fff;
+        z-index: -1;
+        display: block;
+    }
+
+    .header-side-left {
+        margin-right: @logo-width / 2;
+        color: #000;
+        font-size: 36px;
+        text-align: right;
+    }
+
+    .header-side-right {
+        margin-left: @logo-width / 2;
+        color: #999;
+        font-size: 24px;
+    }
+
+    h1, h2 {
+        font-weight: 200;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    a {
+        transition: 0.3s;
+        color: #999;
+
+        &:hover {
+            color: #000;
+            text-decoration: none;
+        }
+    }
+}
+
+main {
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75);
+    text-align: center;
+
+    p {
+        padding: 5px;
+        margin: 10px 0;
+        font-size: 18px;
+        color: #666;
+
+        &.focused {
+            font-size: 24px;
+            color: #333;
+        }
+    }
+
+    .divider {
+        margin: 20px 0;
+        border-top: 1px solid #ccc;
+    }
+}
+
+footer {
+    height: @footer-height;
+
+    .follow-btn {
+        line-height: 50px;
+        background: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #333;
+        font-size: 18px;
+
+        &:hover {
+            text-decoration: none;
+            background: #eee;
+        }
+    }
+}
