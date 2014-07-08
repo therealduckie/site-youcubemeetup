@@ -5,7 +5,7 @@
     function computeResize() {
         var view_height = $(window).height();
 
-        $header.css('margin-bottom', (view_height - $content.height()) / 2 - $header.height());
+        $header.css('margin-bottom', Math.max((view_height - $content.height()) / 2 - $header.height(), 30));
     }
 
     $(function () {
