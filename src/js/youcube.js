@@ -13,6 +13,26 @@
         $(window).resize(computeResize);
     });
 
+    $('.profile-slider').each(function () {
+        var $this     = $(this),
+            $offseter = $('<div class="profile-slider-offset" />');
+
+        $this.wrapInner($offseter);
+
+        setInterval(function () {
+            var $offseter = $('.profile-slider-offset', $this);
+
+            $offseter.addClass('animated');
+            $offseter.css('transform', 'translateX(-150px)');
+
+            setTimeout(function () {
+                $offseter.removeClass('animated');
+                $offseter.css('transform', 'translateX(0)');
+                $offseter.find('> *:first-child').remove().appendTo($offseter);
+            }, 500);
+        }, 2000);
+    });
+
 
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

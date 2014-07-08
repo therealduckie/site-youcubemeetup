@@ -124,3 +124,24 @@ footer {
         }
     }
 }
+
+.profile-slider {
+    overflow: hidden;
+    max-height: 150px;
+}
+.profile-slider-offset {
+    width: 150%;
+
+    &.animated {
+        transition: 0.5s;
+    }
+}
+.profile-slider-offset > * {
+    display: block;
+    float:left;
+}
+.profile-slider-offset img {
+    max-width: 140px;
+    max-height: 140px;
+    margin: 5px;
+}
